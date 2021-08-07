@@ -15,3 +15,11 @@ class Solution:
       Complexity: Time O(n^2)
     '''
     twoSum = lambda s,n,t,i=0: [i+1+n[i+1:].index(t-n[i]), i] if t-n[i] in n[i+1:] else s.twoSum(n,t,i+1)
+
+    
+    '''
+      Problem: https://leetcode.com/problems/stone-game/
+      Solution desciption: Program output always True regardless of input values
+      Complexity: Time O(1), Space O(1)
+    '''
+    stoneGame = lambda *_ : True
