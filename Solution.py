@@ -1,5 +1,5 @@
 '''
-  August 2021 LeetCode Daily Challenges: https://leetcode.com/explore/challenge/card/august-leetcoding-challenge-2021/
+  A collection of solutions for leetcode problems that can fit in one-line of python
 '''
 class Solution:
     '''
@@ -23,3 +23,10 @@ class Solution:
       Complexity: Time O(1), Space O(1)
     '''
     stoneGame = lambda *_ : True
+
+    '''
+      Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+      Solution description: Recursively search through a tree until a node is found such that both nodes p and q are neither both less than said node of both greater
+      Complexity: Time O(log(n))
+    '''
+    lowestCommonAncestor = lambda f, c, p, q: f.lowestCommonAncestor(c.right, p, q) if (c.val < p.val and c.val < q.val) else (f.lowestCommonAncestor(c.left, p, q) if (c.val > p.val and c.val > q.val) else c)
