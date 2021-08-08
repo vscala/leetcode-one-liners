@@ -30,3 +30,11 @@ class Solution:
       Complexity: Time O(log(n))
     '''
     lowestCommonAncestor = lambda f, c, p, q: f.lowestCommonAncestor(c.right, p, q) if (c.val < p.val and c.val < q.val) else (f.lowestCommonAncestor(c.left, p, q) if (c.val > p.val and c.val > q.val) else c)
+
+    '''
+      Problem: https://leetcode.com/problems/minimum-garden-perimeter-to-collect-enough-apples/
+      Solution description: Increase l until a >= na (https://oeis.org/A300758)
+      Complexity: ???
+    '''
+    minimumPerimeter = lambda s, na, l=0, a=0: l*8 if a>=na else s.minimumPerimeter(na, l+1, a+12*(l+1)**2)
+    
