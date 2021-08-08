@@ -1,2 +1,2 @@
 # leetcode-one-liners
-August leetcode daily challenges solved in one line of python3
+Leetcode problems solved in one line of python3
