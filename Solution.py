@@ -43,3 +43,10 @@ class Solution:
     '''
     minimumPerimeter = lambda s, na, l=0, a=0: l*8 if a>=na else s.minimumPerimeter(na, l+1, a+12*(l+1)**2)
     
+    '''
+      Problem: https://leetcode.com/problems/build-array-from-permutation/
+      Solution: Simply return array of elements at the A[ith] location for each in A
+      Complexity: Time O(n) (one pass)
+    
+    '''
+    buildArray = lambda s, A : [A[i] for i in A]
