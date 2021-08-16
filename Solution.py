@@ -50,3 +50,11 @@ class Solution:
     
     '''
     buildArray = lambda s, A : [A[i] for i in A]
+
+    
+    '''
+      Problem: https://leetcode.com/problems/di-string-match/
+      Solution: Iterate over s and return l:=l+1 if s[i] == "I" and r:=r-1 otherwise
+      Complexity: Time O(n) (one pass)
+    '''
+    diStringMatch = lambda t, s, l=-1, r=0: [(l:=l+1) if s[i] == "I" else (r:=r-1) for i in range(len(s))] + [l+1] if r else t.diStringMatch(s, r=len(s)+1)
