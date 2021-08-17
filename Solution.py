@@ -58,3 +58,13 @@ class Solution:
       Complexity: Time O(n) (one pass)
     '''
     diStringMatch = lambda t, s, l=-1, r=0: [(l:=l+1) if s[i] == "I" else (r:=r-1) for i in range(len(s))] + [l+1] if r else t.diStringMatch(s, r=len(s)+1)
+    
+    
+    '''
+      Problem: https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+      Solution: 
+        Case r.val >= m: return 1 + s.goodNodes(r.left, r.val) + s.goodNodes(r.right, r.val)
+        Case r.val <  m: return 0 + s.goodNodes(r.left, m)     + s.goodNodes(r.right, m)
+      Complexity: Time O(n) (one recusive call to each node)
+    '''
+    goodNodes = lambda s, r, m = -10001: int(r.val>=m) + (s.goodNodes(r.left, max(m, r.val)) if r.left else 0) + (s.goodNodes(r.right, max(m, r.val)) if r.right else 0)
