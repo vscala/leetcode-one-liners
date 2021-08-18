@@ -16,6 +16,13 @@ class Solution:
     '''
     twoSum = lambda s,n,t,i=0: [i+1+n[i+1:].index(t-n[i]), i] if t-n[i] in n[i+1:] else s.twoSum(n,t,i+1)
     
+    
+    '''
+      Problem: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+      Compleixty: Time O(n) (one pass)
+    '''
+    twoSum_ = lambda s, a, t, l=0, r=-1: s.twoSum(a, t, l+1, r) if a[l] + a[r] < t else (s.twoSum(a, t, l, r-1) if  a[l] + a[r] > t else [l+1, len(a)+r+1])
+    
     '''
       Problem: https://leetcode.com/problems/reverse-integer/
       Solution description: First call of reverse calculates the reverse of integer x, second call checks that the reverse is in bounds and returns 0 if not
