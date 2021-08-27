@@ -16,7 +16,6 @@ class Solution:
     '''
     twoSum = lambda s,n,t,i=0: [i+1+n[i+1:].index(t-n[i]), i] if t-n[i] in n[i+1:] else s.twoSum(n,t,i+1)
     
-    
     '''
       Problem: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
       Compleixty: Time O(n) (one pass)
@@ -57,7 +56,6 @@ class Solution:
     
     '''
     buildArray = lambda s, A : [A[i] for i in A]
-
     
     '''
       Problem: https://leetcode.com/problems/di-string-match/
@@ -65,7 +63,6 @@ class Solution:
       Complexity: Time O(n) (one pass)
     '''
     diStringMatch = lambda t, s, l=-1, r=0: [(l:=l+1) if s[i] == "I" else (r:=r-1) for i in range(len(s))] + [l+1] if r else t.diStringMatch(s, r=len(s)+1)
-    
     
     '''
       Problem: https://leetcode.com/problems/count-good-nodes-in-binary-tree/
@@ -75,3 +72,10 @@ class Solution:
       Complexity: Time O(n) (one recusive call to each node)
     '''
     goodNodes = lambda s, r, m = -10001: int(r.val>=m) + (s.goodNodes(r.left, max(m, r.val)) if r.left else 0) + (s.goodNodes(r.right, max(m, r.val)) if r.right else 0)
+    
+    '''
+      Problem: https://leetcode.com/problems/largest-palindrome-product/
+      Solution: Preprocesses all possible solutions
+      Complexity: Time O(1) Space O(1)
+    '''
+    largestPalindrome = lambda s, n : [9, 987, 123, 597, 677, 1218, 877, 475][n-1]
