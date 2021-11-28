@@ -83,7 +83,7 @@ class Solution:
     '''
       Problem: https://leetcode.com/problems/all-paths-from-source-to-target/submissions/
       Solution: if c is the target node return [c] else return [c] + all paths from adjacent to target
-      Complexity: Time O(p) (where p is the number of paths)
+      Complexity: Time O(p*l) (where p is the number of paths, and l is the length of a path)
     '''
     allPathsSourceTarget = lambda s, g, c=0 : [[c]] if c == len(g)-1 else [[c] + p for a in g[c] for p in s.allPathsSourceTarget(g, a)]
 
