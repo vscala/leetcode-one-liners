@@ -80,10 +80,17 @@ class Solution:
     '''
     largestPalindrome = lambda s, n : [9, 987, 123, 597, 677, 1218, 877, 475][n-1]
     
-    
     '''
       Problem: https://leetcode.com/problems/reverse-prefix-of-word/
       Solution: Reverse prefix containing c if c is in w
       Complexity: Time O(3n)
     '''
     reversePrefix = lambda s, w, c : (w[:w.index(c)+1])[::-1] + w[w.index(c)+1:] if c in w else w
+    
+    '''
+      Problem: https://leetcode.com/problems/all-paths-from-source-to-target/submissions/
+      Solution: if c is the target node return [c] else return [c] + all paths from adjacent to target
+      Complexity: Time O(p) (where p is the number of paths)
+    '''
+    allPathsSourceTarget = lambda s, g, c=0 : [[c]] if c == len(g)-1 else [[c] + p for a in g[c] for p in s.allPathsSourceTarget(g, a)]
+
