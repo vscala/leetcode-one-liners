@@ -3,13 +3,6 @@
 '''
 class Solution:
     '''
-      Problem: https://leetcode.com/problems/making-a-large-island/
-      Solution description: ???
-      Complexity: ???
-    '''
-    #largestIsland = lambda s, g, i=0: max('''cur loc, next loc''') if i < len(grid)*len(grid[0]) else 0
-    
-    '''
       Problem: https://leetcode.com/problems/two-sum/
       Solution description: A recusive O(n^2) approach that iterates though each pair of elements in the array until a solution is found
       Complexity: Time O(n^2)
@@ -83,7 +76,7 @@ class Solution:
     '''
       Problem: https://leetcode.com/problems/reverse-prefix-of-word/
       Solution: Reverse prefix containing c if c is in w
-      Complexity: Time O(3n)
+      Complexity: Time O(n)
     '''
     reversePrefix = lambda s, w, c : (w[:w.index(c)+1])[::-1] + w[w.index(c)+1:] if c in w else w
     
