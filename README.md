@@ -1,7 +1,7 @@
 # LeetCode One-Liners
 LeetCode problems solved in one line of python. 
 
-## Solved [12]
+## Solved [13]
  - https://leetcode.com/problems/two-sum/
 
  - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
@@ -25,3 +25,5 @@ LeetCode problems solved in one line of python.
  - https://leetcode.com/problems/reverse-prefix-of-word/
 
  - https://leetcode.com/problems/all-paths-from-source-to-target/submissions/
+
+ - https://leetcode.com/problems/k-closest-points-to-origin/
