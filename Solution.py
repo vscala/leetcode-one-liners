@@ -86,4 +86,11 @@ class Solution:
       Complexity: Time O(p*l) (where p is the number of paths, and l is the length of a path)
     '''
     allPathsSourceTarget = lambda s, g, c=0 : [[c]] if c == len(g)-1 else [[c] + p for a in g[c] for p in s.allPathsSourceTarget(g, a)]
+    
+    '''
+      Problem: https://leetcode.com/problems/k-closest-points-to-origin/
+      Solution: sort by euclidean distance between each point and origin (ignoring sqrt)
+      Complexity: Time O(nlogn)
+    '''
+    kClosest = lambda _, p, k : sorted(p, key = lambda a: a[0] * a[0] + a[1] * a[1])[:k]
 
